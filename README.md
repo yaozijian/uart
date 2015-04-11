@@ -57,6 +57,13 @@ func doEcho(this *uart.Uart) bool {
 * 从接收程道收到的数据是interface{}类型，可通过类型断言判断具体类型；具体类型会是某种已经注册类型的指针。
 * 出现网络错误时Uart对象会停止运行，关闭接收程道，可以通过接收程道已经关闭来断定网络连接已经断开。
 
+#示例代码
+
+* 编译客户端: go build client.go msg.go
+* 编译服务器: go build server.go msg.go
+* 运行服务器：直接执行则在4444端口启动TCP监听；可以带参数指示监听的端口
+* 运行客户端：直接执行则试图连接到127.0.0.1:4444，可以带参数指示服务器的地址和端口
+
 #关于包名
 
 本包的作用与硬件中的UART(universal asynchronous receiver-transmitter,通用异步收发器)的作用相似，所以使用了uart作为包名称。
